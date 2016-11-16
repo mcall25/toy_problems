@@ -32,6 +32,7 @@ function changeCase(string) {
 }
 
 // 3. Write a function that takes in all the stock prices for one day and decide what time the user should buy and sell the stock
+// Q. how can i convert an array of 25 numbers into time
 // *****************************************************************************************************************************************************************
 var prices = [5, 10, 20, 5, 10, 15, 20, 5, 25, 10, 5, 10, 20, 5, 10, 15, 20, 5, 40, 10,
 25, 10, 5, 5]
@@ -58,3 +59,42 @@ function stock(array) {
 }
 
 stock(prices)
+
+// 3. Write a function that takes in a phone number and formats the number to the correct format
+// *****************************************************************************************************************************************************************
+var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+function createPhoneNumber(array){
+  var beg = array.slice(0, 3).join('')
+  var beg2 = beg.toString()
+
+  var mid = array.slice(3, 6).join('')
+  var mid2 = mid.toString()
+
+  var end = array.slice(6, 10).join('')
+  var end2 = end.toString()
+
+  return "(" + beg2 + ")" + " " + mid2 + "-" + end
+}
+// 4. Write a function takes in a number and return ture of false if the number is prime or not
+// *****************************************************************************************************************************************************************
+
+function isPrime(num) {
+  if (num <= 1) {
+    return false
+  }
+  if (num === 2 || num === 3) {
+    return true
+  }
+  else if (num > 1) {
+    if (num % 2 > 0 & num % 3 > 0) {
+      return true;
+    }
+    else {
+    	return false
+    }
+  }
+
+}
+
+isPrime(-1)
