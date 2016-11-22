@@ -98,3 +98,56 @@ function isPrime(num) {
 }
 
 isPrime(-1)
+// 4. Write a function
+// We are given two arrays of integers A and B and we have to output a sorted array with the integers that fulfill the following constraints:
+// they are present in both ones
+// they occur more than once in A and more than once in B
+// their values are within a given range
+// thay are odd or even according as it is requested
+// https://www.codewars.com/kata/find-a-bunch-of-common-elements-of-two-lists-in-a-certain-range/train/javascript
+// *****************************************************************************************************************************************************************
+arrA = [1, -2, 7, 2, 1, 3, 7, 1, 0, 2, 3]
+arrB = [2, -1, 1, 1, 1, 1, 2, 3, 3, 7, 7, 0]
+// 0, 1, 2, 3, 7,
+function findArr(arrA, arrB) {
+  for (var i = 0; i < arrA.length; i++) {
+        if (arrB.indexOf(i) > -1) {
+          matches.push(arrA[i]);
+        }
+  }
+}
+
+findArr(arrA, arrB)
+// 5.Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,
+// - each taken only once - coming from s1 or s2.
+// *****************************************************************************************************************************************************************
+a = "xyaabbbccccdefww"
+b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+
+a = "xyaabbbccccdefww"
+b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+
+
+function longest(s1, s2) {
+  var a1 = [];
+  var a2 = [];
+    a1 = s1.split('').sort()
+    a2 = s2.split('')
+
+    for (var i = 0; i < a2.length; i++) {
+      a1.push(a2[i]);
+
+    }
+  for (var i = 0; i < a1.length; i++) {
+    for (var j = i + 1; j < a1.length; j++) {
+      if (a1[i] === a1[j]) {
+        delete a1[j]
+      }
+    }
+  }
+  return a1.sort().join('')
+}
+
+longest(a, b)

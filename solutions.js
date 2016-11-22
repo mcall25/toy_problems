@@ -20,3 +20,15 @@ function isPrime(num) {
   }
   return (num < 2) ? false : prime;
 }
+// 5. Write a function that takes in a number and return true if the number is prime otherwise false
+// https://www.codewars.com/kata/5656b6906de340bd1b0000ac/solutions/javascript
+// *****************************************************************************************************************************************************************
+function isPrime(num) {
+  var prime = true;
+  for(var i = 2; i < num; i++) {
+    if(num % i === 0) {
+      prime = false;
+    }
+  }
+  return (num < 2) ? false : prime;
+}
