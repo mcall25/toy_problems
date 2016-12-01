@@ -151,3 +151,76 @@ function longest(s1, s2) {
 }
 
 longest(a, b)
+
+// 6.Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,
+// - each taken only once - coming from s1 or s2.
+// *****************************************************************************************************************************************************************
+function FirstFactorial(num) {
+  // code goes here
+  for (var i = num - 1; i > 0; i--) {
+      num = num * i
+  }
+  return num;
+}
+FirstFactorial(8)
+// 7.Using the JavaScript language, have the function LongestWord(sen)
+// take the sen parameter being passed and return the largest word in the string. If there are two or
+//  more words that are the same length, return the first word from the string with that length. Ignore
+//  punctuation and assume sen will not be empty.
+// *****************************************************************************************************************************************************************
+function LetterChanges(str) {
+  var al = "abcdefghijklmnopqrstuvwxyz"
+  var a12 = al.split('')
+  var array = str.split('')
+  // code goes here
+    for (var i = 0; i < array.length; i++) {
+
+        if (a12.indexOf(array[i]) == 25) {
+          array[i] = a12[0]
+        }
+        else {
+            array[i] = a12[a12.indexOf(array[i]) + 1];
+        }
+
+    }
+    for (var j = 0; j < array.length; j++) {
+
+      if (array[j] === "a" || array[j] === "u" || array[j] === "o" || array[j] === "i" || array[j] === "e")
+        {
+            array[j] = array[j].toUpperCase();
+        }
+
+    }
+
+    return a12;
+
+}
+
+// keep this function call here
+
+LetterChanges("aeddz");
+// 8.Using the JavaScript language, have the function LongestWord(sen)
+// take the sen parameter being passed and return the largest word in the string. If there are two or
+//  more words that are the same length, return the first word from the string with that length. Ignore
+//  punctuation and assume sen will not be empty.
+// *****************************************************************************************************************************************************************
+
+var str = "fun&!!$%%^&,. time michaet michael iwenttothesrot ilovehertodeath";
+
+function LongestWord(sen) {
+ sen = sen.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+ sen = sen.split(' ');
+ var longest = 0;
+ var word = ''
+  for (var i = 0; i < sen.length; i++) {
+      if (sen[i].length > longest) {
+        longest = sen[i].length;
+        word = sen[i];
+
+      }
+  }
+ return word;
+}
+
+// keep this function call here
+LongestWord(str);
