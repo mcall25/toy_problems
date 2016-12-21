@@ -224,3 +224,116 @@ function LongestWord(sen) {
 
 // keep this function call here
 LongestWord(str);
+
+// 9.Using the JavaScript language, have the function LongestWord(sen)
+// take the sen parameter being passed and return the largest word in the string. If there are two or
+//  more words that are the same length, return the first word from the string with that length. Ignore
+//  punctuation and assume sen will not be empty.
+// *****************************************************************************************************************************************************************
+
+
+var board = [[5, 3, 4, 6, 7, 8, 9, 1, 2],
+             [6, 7, 2, 1, 9, 5, 3, 4, 8],
+             [1, 9, 8, 3, 4, 2, 5, 6, 7],
+             [8, 5, 9, 7, 6, 1, 4, 2, 3],
+             [4, 2, 6, 8, 5, 3, 7, 9, 1],
+             [7, 1, 3, 9, 2, 4, 8, 5, 6],
+             [9, 6, 1, 5, 3, 7, 2, 8, 4],
+             [2, 8, 7, 4, 1, 9, 6, 3, 5],
+             [3, 4, 5, 2, 8, 6, 1, 7, 9]];
+
+   function doneOrNot(array){
+
+     for (var i = 0; i < array.length; i++) {
+        if (array[i].length !== board.length) {
+          return false;
+        }
+     }
+     for (var j = 0; j < array.length; j++) {
+        console.log(array[j].sort())
+
+        for (var k = 1; k <= 9; k++) {
+            if (array[j][k - 1] !== k) {
+               return false;
+
+            }
+        }
+     }
+
+   }
+
+   doneOrNot(board)
+
+
+
+
+
+   function squre(num, num2) {
+     var array = [];
+     var array2;
+     array.push(num);
+     array.push(num2);
+
+       for (var i = 0; i < array.length; i++) {
+          array[i] = array[i] * array[i];
+          console.log(array[i]);
+          array2.push(array[i]);
+        }
+
+       return num
+
+   }
+
+   squre(5, 25);
+
+   function squre(num, num2) {
+
+     num = num * num;
+     num2 = num2 * num2;
+     console.log(num);
+     console.log(num2);
+
+      return num
+   }
+
+   squre(5, 25);
+
+
+// 10.You will be given an array of strings which will include both integers and characters.
+// Return an array of length 2 with a[0] representing the mean of the integers to a single decimal place. There will always be 10 integers and 10 characters. Create a single string with the characters and return it as a[1] while maintaining the original order.
+
+// *****************************************************************************************************************************************************************
+var lst = ['u', '6', 'd', '1', 'i', 'w', '6', 's', 't', '4', 'a', '6', 'g', '1', '2', 'w', '8', 'o', '2', '0'];
+
+// [3.6, 'udiwstagwo']
+
+function mean(array){
+  var nums = [];
+  var letters = [];
+  var ans = []
+
+  for (var i = 0; i < array.length; i++) {
+      if (isNaN(Number(array[i]))) {
+        letters.push(array[i]);
+      }
+      else {
+        nums.push(array[i])
+      }
+
+  }
+    var total = 0;
+
+    for (var j = 0; j < nums.length; j++) {
+        total = total + Number(nums[j])
+
+    }
+    var mean;
+    mean = total/nums.length
+    var mean2 = mean.toFixed(1)
+
+    ans.push(Number(mean2))
+    ans.push(letters.join(''))
+
+    return ans
+}
+mean(lst)
