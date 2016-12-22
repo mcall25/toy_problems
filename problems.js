@@ -322,18 +322,22 @@ function mean(array){
 
   }
     var total = 0;
-
-    for (var j = 0; j < nums.length; j++) {
-        total = total + Number(nums[j])
-
-    }
-    var mean;
-    mean = total/nums.length
-    var mean2 = mean.toFixed(1)
-
-    ans.push(Number(mean2))
-    ans.push(letters.join(''))
-
-    return ans
+// 11.
+// Write a function generateIntegers/generate_integers that accepts two arguments m/$m and n/$n and generates an array containing the integers from m to n inclusive.
+//
+// For example, generateIntegers(2, 5)/generate_integers(2, 5) should return [2, 3, 4, 5].
+//
+// m/$m and n/$n can be any integers greater than or equal to 0.
+//
+// n/$n will always be greater than or equal to m/$m.
+// *****************************************************************************************************************************************************************
+function generateIntegers(m, n) {
+  var nums = [];
+   if (m >= 0 && n >=0 && n >= m) {
+      for (var i = m; i <= n; i++) {
+         nums.push(i)
+      }
+      return nums
+  }
 }
-mean(lst)
+generateIntegers(5, 10);
