@@ -386,3 +386,15 @@ function closure() {
    add: addOne
  }
 }
+// 15.
+// gravel
+// *****************************************************************************************************************************************************************
+
+garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
+
+function rakeGarden(garden) {
+  var rakedGarden;
+  var array = garden.split(' ')
+  // TODO: Program Me
+  return rakedGarden;
+}
