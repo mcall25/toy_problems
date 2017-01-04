@@ -395,111 +395,40 @@ garden = 'slug spider rock gravel gravel gravel gravel gravel gravel gravel'
 function rakeGarden(garden) {
   var rakedGarden;
   var array = garden.split(' ')
-  // TODO: Program Me
-  return rakedGarden;
-}
-// 15.
-// gravel
-// *****************************************************************************************************************************************************************
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] != "g" || array[i] != 'rock') {
 
-for (var i = 0; i < array.length; i++) {
-  array[i]
+    }
+  }
+  // TODO: Program Me
+  return array;
 }
 // 16.
-// gravel
+// number in expanded form
 // *****************************************************************************************************************************************************************
-function SimpleAdding(num) {
-var c = 1
 
-  for (var i = 1; i < num; i++) {
-      c = c + (i + 1)
-  }
-  // code goes here
-  return c;
+function expandedForm(num) {
+  // Your code here
+  var pos = [1, 10, 1000, 10000, 100000, 1000000];
+
 
 }
 // 17.
-//s
+// number in expanded form
 // *****************************************************************************************************************************************************************
-var s = "+d+=3=+s+"
+var arr =  [ 0, null, 5, 1, -10]
+// Output:  [ 2, 4, 3, -4.5]
+function averages(array) {
+  var ans = []
+  var ans2 = []
+  var c = 0
+  for (var i = 0; i < array.length - 1; i++) {
 
-function SimpleSymbols(str) {
-  var final = "true"
-  var array = s.split('')
-  // code goes here
-  var ans = array.filter(function(num){ if (num == "+" || num != '=' &&
-  isNaN(num)){
+       c = (array[i] +  array[i + 1]) / 2
 
-    return num
+        ans.push(c)
   }
-
-});
-   console.log(ans.length)
-   console.log(ans)
-    for (var i = 0; i < ans.length; i++) {
-      if (ans[0] != "+" || ans[ans.length - 1] != "+"){
-        final = "false"
-      }
-      if(ans[i] != "+") {
-
-          if (ans[i - 1] != "+" || ans[i + 1] != "+" ) {
-            final = "false"
-          }
-      }
-    }
-    return final
+  return ans
 }
 
-SimpleSymbols(s)
-
-// Number(arr[0])
-// 18.
-//
-// *****************************************************************************************************************************************************************
-
-function CheckNums(num1,num2) {
-
-if (num1 = num2) {
-    return '-1'
-}
-if (num2 > num1) {
-  return 'true'
-}
-else {
-  return 'false'
-}
-
-
-}
-// 19.
-//
-// *****************************************************************************************************************************************************************
-
-function TimeConvert(num) {
-  var h = 0;
-  var m = 0;
-  var array = []
-
-  h = num / 60
-
-  if (h <= 1) {
-    return "h + ":" + num"
-  }
-  else {
-    m = num - (Math.floor(h) * 60)
-    return m
-  }
-  // code goes here
-
-
-}
-// 20.
-//
-// *****************************************************************************************************************************************************************
-function AlphabetSoup(str) {
-
-  // code goes here
-  return str;
-
-}
-AlphabetSoup(coderbyte)
+averages(arr)
